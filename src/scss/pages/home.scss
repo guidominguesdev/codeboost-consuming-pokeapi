@@ -1,0 +1,228 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.s-hero {
+  width: 100%;
+  height: to-rem(994px);
+  position: relative;
+
+  .hero-slider {
+    @include size(100%);
+    overflow: hidden;
+
+    .swiper-slide {
+      &.blue {
+        .main-area {
+          background-image: url('../../../public/svg/bg-blue.svg');
+
+          .text {
+            .image {
+              .pokeball {
+                position: relative;
+                top: -$space-16;
+                left: $space-2;
+              }
+            }
+          }
+
+          .area-explore {
+            .txt {
+              .icon {
+                background-color: #5b7fc7;
+              }
+            }
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: to-rem(288px);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #eff3f6;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .main-area {
+        width: 100%;
+        height: to-rem(706px);
+        background: url('../../../public/svg/bg-red.svg') no-repeat center
+          center / cover;
+
+        padding-top: $space-33;
+
+        .container {
+          position: relative;
+          height: 100%;
+        }
+
+        .text {
+          .tag {
+            margin: 0 auto;
+          }
+
+          h1 {
+            color: $colors-pure-white;
+            text-align: center;
+            margin-block: $space-8 $space-4;
+          }
+
+          p {
+            font-size: to-rem(18px);
+            font-weight: $font-weights-medium;
+            color: $colors-pure-white;
+            text-align: center;
+          }
+
+          .image {
+            @include max-w(to-rem(798px));
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: to-rem(122px);
+            animation: float 6s ease-in-out infinite;
+
+            .pokeball {
+              position: absolute;
+              left: to-rem(-2px);
+            }
+
+            .lights {
+              position: absolute;
+              top: -$space-10;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+
+        .area-explore {
+          @include flex(flex-end, space-between);
+          width: 100%;
+          position: absolute;
+          bottom: $space-20;
+          left: 0;
+
+          .txt {
+            @include flex-col-reverse(center, null);
+            gap: $space-8;
+
+            .icon {
+              @include flex(center, center);
+              @include size($space-10);
+              background-color: #c90c0c;
+              border-radius: $radii-full;
+              color: $colors-pure-white;
+            }
+
+            span {
+              font-size: to-rem(13px);
+              font-weight: $font-weights-medium;
+              color: $colors-pure-white;
+              transform: rotate(180deg);
+              writing-mode: vertical-rl;
+              white-space: nowrap;
+            }
+          }
+
+          .swiper-pagination {
+            @include flex;
+            gap: $space-2;
+            width: auto;
+            position: relative;
+
+            .swiper-pagination-bullet {
+              @include size(to-rem(7px));
+              background-color: $colors-pure-white;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translatey(0);
+    }
+    50% {
+      transform: translateY($space-3);
+    }
+    100% {
+      transform: translatey(0);
+    }
+  }
+}
+
+.s-all-info-pokemons {
+  padding-top: $space-30;
+  position: relative;
+  margin-top: to-rem(-288px);
+  z-index: 1;
+
+  .top {
+    @include flex(flex-end, space-between);
+    margin-bottom: to-rem(90px);
+
+    h2 {
+      max-width: to-rem(265px);
+    }
+  }
+
+  .area-all {
+    @include flex;
+
+    .left-container,
+    .right-container {
+      padding-block: $space-18 $space-22;
+    }
+
+    .left-container {
+      @include max-w(to-rem(240px));
+      border-right: $border-widths-thin solid #eff3f6;
+
+      ul {
+        @include flex-col;
+        gap: $space-10;
+      }
+    }
+
+    .right-container {
+      width: 100%;
+      padding-left: $space-18;
+
+      .top-container {
+        margin-bottom: $space-18;
+
+        & > div {
+          @include flex(center, null);
+          gap: $space-4;
+
+          span {
+            font-family: $fonts-heading;
+            font-size: to-rem(18px);
+            font-weight: $font-weights-semibold;
+            color: #4d5053;
+          }
+        }
+      }
+
+      .all {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: $space-8;
+        margin-bottom: $space-18;
+      }
+
+      .button-load-more {
+        margin: 0 auto;
+      }
+    }
+  }
+}

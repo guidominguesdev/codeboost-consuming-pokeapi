@@ -1,0 +1,34 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.tag {
+  @include flex(center, null);
+  background-color: $colors-pure-white;
+  border-radius: $radii-full;
+  max-width: $space-30;
+  padding-inline: $space-2;
+  padding-block: to-rem(6px);
+
+  .icon {
+    @include flex(center, center);
+    @include size(to-rem(26px));
+    border-radius: $radii-full;
+    margin-right: $space-2;
+    background-color: transparentize(#c20001, 0.8);
+  }
+
+  span {
+    font-weight: $font-weights-semibold;
+    color: #c20001;
+  }
+
+  &.blue-tag {
+    .icon {
+      background-color: transparentize(#3f67ba, 0.85);
+    }
+
+    span {
+      color: #3f67ba;
+    }
+  }
+}

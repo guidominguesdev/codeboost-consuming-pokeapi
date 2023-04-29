@@ -1,0 +1,21 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+header {
+  @include flex(center, null);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: to-rem(112px);
+  z-index: 10;
+
+  .container {
+    @include flex(center, space-between);
+  }
+
+  p {
+    font-size: to-rem(13px);
+    color: $colors-pure-white;
+  }
+}

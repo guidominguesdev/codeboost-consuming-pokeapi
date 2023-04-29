@@ -1,0 +1,24 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.button-load-more {
+  all: unset;
+
+  display: block;
+  font-size: to-rem(14px);
+  font-family: $fonts-heading;
+  font-weight: $font-weights-semibold;
+  letter-spacing: $letter-spacings-md;
+  background-color: transparentize(#3f5eb3, 0.9);
+  border-radius: $radii-md;
+  height: $space-11;
+  padding-inline: $space-5;
+  color: $colors-blue-primary;
+  transition: background-color $transitions-fast, color $transitions-fast;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $colors-blue-primary;
+    color: $colors-pure-white;
+  }
+}

@@ -1,0 +1,151 @@
+@use 'theme' as *;
+
+@mixin flex($align: null, $justify: null) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $align == null and $justify == null {
+    display: flex;
+  }
+  @if $align != null {
+    align-items: $align;
+  }
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin flex-col($align: null, $justify: null) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $align == null and $justify == null {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @if $align != null {
+    align-items: $align;
+  }
+
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin flex-col-reverse($align: null, $justify: null) {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $align == null and $justify == null {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @if $align != null {
+    align-items: $align;
+  }
+
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin py($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin px($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin my($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin mx($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin responsive($device) {
+  @if $device == 2xl {
+    @media screen and (max-width: $media-2xl) {
+      @content;
+    }
+  } @else if $device == xl {
+    @media screen and (max-width: $media-xl) {
+      @content;
+    }
+  } @else if $device == lg {
+    @media screen and (max-width: $media-lg) {
+      @content;
+    }
+  } @else if $device == md {
+    @media screen and (max-width: $media-md) {
+      @content;
+    }
+  } @else if $device == sm {
+    @media screen and (max-width: $media-sm) {
+      @content;
+    }
+  }
+}
+
+@mixin max-w($value) {
+  width: 100%;
+  max-width: $value;
+}
+
+@mixin size($width, $height: false) {
+  $size: $width;
+  @if $height == false {
+    width: $size;
+    height: $size;
+  } @else if $height != false {
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+
+  @if $top != null {
+    top: $top;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  @if $left != null {
+    left: $left;
+  }
+}
+
+@mixin visibility($type) {
+  @if $type== 'hide' {
+    pointer-events: none;
+    opacity: 0;
+  } @else if $type== 'show' {
+    pointer-events: all;
+    opacity: 1;
+  }
+}

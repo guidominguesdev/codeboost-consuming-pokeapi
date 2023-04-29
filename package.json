@@ -1,0 +1,31 @@
+{
+  "name": "codeboost-consuming-pokeapi",
+  "version": "1.0.0",
+  "author": "Gui Domingues",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "browser-sync": "^2.28.3",
+    "eslint": "^7.23.0 || ^8.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "prettier": "^2.6.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.58.3"
+  },
+  "peerDependencies": {
+    "eslint": "^7.23.0 || ^8.0.0"
+  }
+}

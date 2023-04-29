@@ -1,0 +1,42 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.search {
+  @include max-w(to-rem(400px));
+  @include flex(center, space-between);
+
+  background-color: $colors-pure-white;
+  border-radius: $radii-full;
+  height: $space-14;
+
+  padding-block: to-rem(6px);
+  padding-inline: to-rem(18px) to-rem(6px);
+
+  input[type='text'] {
+    border: 0;
+    outline: none;
+    width: 80%;
+
+    &::placeholder {
+      color: #a0afba;
+    }
+  }
+
+  button {
+    @include flex(center, center);
+    @include size($space-10);
+
+    border-radius: $radii-full;
+    background-color: transparentize(#9eb9e1, 0.9);
+    border: $border-widths-thin solid transparent;
+    transition: border-color $transitions-fast;
+
+    &:hover {
+      border-color: #3e75c3;
+    }
+
+    svg {
+      color: $colors-blue-primary;
+    }
+  }
+}

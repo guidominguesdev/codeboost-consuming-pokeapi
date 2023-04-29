@@ -1,0 +1,142 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.type-filter {
+  all: unset;
+
+  @include flex(center, null);
+  filter: grayscale(100%);
+  opacity: $opacity-medium;
+  transition: filter $transitions-fast, opacity $transitions-fast;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    filter: grayscale(0%);
+    opacity: $opacity-default;
+  }
+
+  .icon {
+    @include flex(center, center);
+    @include size($space-7);
+    margin-right: $space-4;
+  }
+
+  span {
+    font-weight: $font-weights-medium;
+  }
+
+  &.all {
+    span {
+      color: $colors-blue-primary;
+    }
+  }
+
+  &.bug {
+    span {
+      color: $colors-type-bug;
+    }
+  }
+
+  &.dark {
+    span {
+      color: $colors-type-dark;
+    }
+  }
+
+  &.dragon {
+    span {
+      color: $colors-type-dragon;
+    }
+  }
+
+  &.electric {
+    span {
+      color: $colors-type-electric;
+    }
+  }
+
+  &.fairy {
+    span {
+      color: $colors-type-fairy;
+    }
+  }
+
+  &.fighting {
+    span {
+      color: $colors-type-fighting;
+    }
+  }
+
+  &.ground {
+    span {
+      color: $colors-type-ground;
+    }
+  }
+
+  &.ice {
+    span {
+      color: $colors-type-ice;
+    }
+  }
+
+  &.normal {
+    span {
+      color: $colors-type-normal;
+    }
+  }
+
+  &.poison {
+    span {
+      color: $colors-type-poison;
+    }
+  }
+
+  &.psychic {
+    span {
+      color: $colors-type-psychic;
+    }
+  }
+
+  &.rock {
+    span {
+      color: $colors-type-rock;
+    }
+  }
+
+  &.ghost {
+    span {
+      color: $colors-type-ghost;
+    }
+  }
+
+  &.grass {
+    span {
+      color: $colors-type-grass;
+    }
+  }
+
+  &.steel {
+    span {
+      color: $colors-type-steel;
+    }
+  }
+
+  &.water {
+    span {
+      color: $colors-type-water;
+    }
+  }
+
+  &.fire {
+    span {
+      color: $colors-type-fire;
+    }
+  }
+
+  &.flying {
+    span {
+      color: $colors-type-flying;
+    }
+  }
+}

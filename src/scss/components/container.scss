@@ -1,0 +1,6 @@
+@use 'abstracts' as *;
+
+.container {
+  width: min(100% - to-rem(30px), to-rem(1216px));
+  margin-inline: auto;
+}

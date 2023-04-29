@@ -1,0 +1,206 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.card-pokemon {
+  all: unset;
+
+  @include max-w(to-rem(280px));
+  position: relative;
+  background-color: $colors-pure-white;
+  height: to-rem(304px);
+  box-shadow: 0px 10px 51px -5px transparentize(#b7bdc1, 0.7);
+  border-radius: $radii-lg;
+  z-index: 1;
+  transition: transform $transitions-fast, box-shadow $transitions-fast;
+  cursor: pointer;
+
+  .image {
+    @include flex(center, center);
+    @include size(to-rem(200px));
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: $space-4;
+
+    .thumb-img {
+      max-width: to-rem(142px);
+    }
+
+    &::after {
+      content: '';
+      @include size(to-rem(165px));
+      position: absolute;
+      z-index: -1;
+      border-radius: $radii-full;
+    }
+  }
+
+  .info {
+    @include flex(flex-end, space-between);
+    width: 100%;
+    padding-inline: $space-7;
+
+    .text {
+      span {
+        text-align: left;
+        display: block;
+        font-weight: $font-weights-medium;
+        font-size: to-rem(13px);
+        color: #7a7d80;
+        margin-bottom: to-rem(6px);
+      }
+    }
+
+    .icon {
+      margin-bottom: $space-2;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 12px 40px -5px transparentize(#5a6064, 0.7);
+  }
+
+  &.bug {
+    .image {
+      &::after {
+        background-color: transparentize(#9cba48, 0.8);
+      }
+    }
+  }
+
+  &.dark {
+    .image {
+      &::after {
+        background-color: transparentize(#595761, 0.8);
+      }
+    }
+  }
+
+  &.dragon {
+    .image {
+      &::after {
+        background-color: transparentize(#2c6ac1, 0.8);
+      }
+    }
+  }
+
+  &.electric {
+    .image {
+      &::after {
+        background-color: transparentize(#eeda67, 0.8);
+      }
+    }
+  }
+
+  &.fairy {
+    .image {
+      &::after {
+        background-color: transparentize(#e296e1, 0.8);
+      }
+    }
+  }
+
+  &.fighting {
+    .image {
+      &::after {
+        background-color: transparentize(#c44d61, 0.8);
+      }
+    }
+  }
+
+  &.ground {
+    .image {
+      &::after {
+        background-color: transparentize(#ce8056, 0.8);
+      }
+    }
+  }
+
+  &.ice {
+    .image {
+      &::after {
+        background-color: transparentize(#8bcec1, 0.8);
+      }
+    }
+  }
+
+  &.normal {
+    .image {
+      &::after {
+        background-color: transparentize(#a0a29f, 0.8);
+      }
+    }
+  }
+
+  &.poison {
+    .image {
+      &::after {
+        background-color: transparentize(#ac6aca, 0.8);
+      }
+    }
+  }
+
+  &.psychic {
+    .image {
+      &::after {
+        background-color: transparentize(#eb8c85, 0.8);
+      }
+    }
+  }
+
+  &.rock {
+    .image {
+      &::after {
+        background-color: transparentize(#8bcec1, 0.8);
+      }
+    }
+  }
+
+  &.ghost {
+    .image {
+      &::after {
+        background-color: transparentize(#616eb7, 0.8);
+      }
+    }
+  }
+
+  &.grass {
+    .image {
+      &::after {
+        background-color: transparentize(#72b861, 0.8);
+      }
+    }
+  }
+
+  &.steel {
+    .image {
+      &::after {
+        background-color: transparentize(#6594a1, 0.8);
+      }
+    }
+  }
+
+  &.water {
+    .image {
+      &::after {
+        background-color: transparentize(#88a3d4, 0.8);
+      }
+    }
+  }
+
+  &.fire {
+    .image {
+      &::after {
+        background-color: transparentize(#f66d6d, 0.8);
+      }
+    }
+  }
+
+  &.flying {
+    .image {
+      &::after {
+        background-color: transparentize(#a6bbe8, 0.8);
+      }
+    }
+  }
+}

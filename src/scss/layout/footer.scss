@@ -1,0 +1,26 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+footer {
+  width: 100%;
+  background-color: $colors-blue-primary;
+  padding-top: 6.7rem;
+  padding-bottom: 6.5rem;
+
+  .container {
+    @include flex(center, space-between);
+  }
+
+  .text {
+    h3 {
+      color: $colors-pure-white;
+    }
+
+    p {
+      font-weight: $font-weights-medium;
+      font-size: to-rem(14px);
+      line-height: $line-heights-tall;
+      color: transparentize($colors-pure-white, 0.2);
+    }
+  }
+}

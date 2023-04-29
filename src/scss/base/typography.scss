@@ -1,0 +1,36 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+h1,
+h2,
+h3 {
+  font-family: $fonts-heading;
+  color: #2f3133;
+}
+
+h1,
+h2 {
+  letter-spacing: $letter-spacings-md;
+  font-weight: $font-weights-bold;
+}
+
+h1 {
+  font-size: to-rem(64px);
+  line-height: to-rem(78px);
+}
+
+h2 {
+  font-size: to-rem(32px);
+  line-height: to-rem(39px);
+}
+
+h3 {
+  font-size: to-rem(18px);
+  line-height: 150%;
+  font-weight: $font-weights-semibold;
+}
+
+h4 {
+  font-size: to-rem(13px);
+  font-weight: $font-weights-semibold;
+}

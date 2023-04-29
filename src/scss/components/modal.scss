@@ -1,0 +1,361 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.modal {
+  @include flex(center, center);
+  @include size(100%);
+  @include visibility(hide);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity $transitions-fast;
+  z-index: $z-indices-modal;
+
+  .overlay {
+    @include size(100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparentize($colors-pure-black, 0.5);
+    z-index: $z-indices-overlay;
+  }
+
+  .box {
+    @include flex;
+    @include max-w(to-rem(710px));
+    height: to-rem(565px);
+    background-color: $colors-pure-white;
+    position: relative;
+    border-radius: $radii-xl;
+    box-shadow: 0px 10px 40px transparentize(#0d0c47, 0.95);
+    transform: translateY($space-10);
+    transition: transform $transitions-fast ease-in;
+    z-index: $z-indices-box;
+
+    .close {
+      @include flex(center, center);
+      @include size($space-9);
+      position: absolute;
+      top: -$space-11;
+      right: 0;
+      background-color: $colors-pure-white;
+      border-radius: $radii-md;
+      cursor: pointer;
+    }
+
+    &__left {
+      @include size(100%);
+      max-width: to-rem(191px);
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: cover;
+      border-top-left-radius: $radii-xl;
+      border-bottom-left-radius: $radii-xl;
+
+      .icon {
+        @include flex(center, center);
+        @include size(to-rem(34px));
+        position: absolute;
+        top: $space-5;
+        right: $space-5;
+        background-color: $colors-pure-white;
+        border-radius: $radii-full;
+      }
+
+      .image {
+        width: to-rem(202px);
+        position: absolute;
+        top: 50%;
+        left: $space-4;
+        transform: translateY(-50%);
+
+        .thumb-img {
+          width: 100%;
+        }
+      }
+    }
+
+    &__right {
+      width: 100%;
+      padding-inline: $space-18;
+      padding-block: $space-8;
+
+      .name {
+        @include flex(flex-end, null);
+        gap: $space-2;
+        margin-bottom: $space-3;
+
+        h2 {
+          font-size: to-rem(28px);
+          line-height: to-rem(34px);
+        }
+
+        span {
+          font-family: $fonts-heading;
+          letter-spacing: $letter-spacings-md;
+          color: #7a7d80;
+        }
+      }
+
+      .type {
+        @include flex(center, null);
+        flex-wrap: wrap;
+        gap: $space-2;
+        width: 100%;
+        margin-bottom: $space-8;
+      }
+
+      .info {
+        @include flex;
+        gap: $space-12;
+        margin-bottom: $space-8;
+
+        li {
+          width: min-content;
+
+          span,
+          strong {
+            display: block;
+            letter-spacing: $letter-spacings-md;
+            width: max-content;
+          }
+
+          span {
+            font-size: to-rem(13px);
+            color: #7a7d80;
+          }
+
+          strong {
+            font-size: to-rem(14px);
+            font-weight: $font-weights-semibold;
+          }
+        }
+      }
+
+      .weaknesses {
+        margin-bottom: $space-8;
+
+        h4 {
+          margin-bottom: $space-4;
+        }
+
+        ul {
+          @include flex;
+          flex-wrap: wrap;
+          gap: $space-2;
+        }
+      }
+
+      .stats {
+        h4 {
+          margin-bottom: $space-4;
+        }
+
+        .all {
+          @include flex-col;
+          gap: $space-1;
+
+          .item {
+            @include flex(center, null);
+            gap: $space-5;
+
+            span {
+              @include max-w($space-18);
+              font-size: to-rem(12px);
+              color: #7a7d80;
+            }
+
+            .bar-status {
+              width: 100%;
+              height: to-rem(3px);
+              background: #eff3f6;
+              position: relative;
+              overflow: hidden;
+
+              .bar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background-color: #c20001;
+              }
+
+              .separator {
+                @include flex(center, center);
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                li {
+                  @include size($space-1);
+                  background-color: $colors-pure-white;
+
+                  &:not(:first-child) {
+                    margin-left: to-rem(53px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &[type-pokemon-modal='bug'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/bug.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='dark'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/dark.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='dragon'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/dragon.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='electric'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/electric.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='fairy'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/fairy.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='fighting'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/fighting.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='ground'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/ground.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='ice'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/ice.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='normal'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/normal.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='poison'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/poison.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='psychic'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/psychic.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='rock'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/rock.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='ghost'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/ghost.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='grass'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/grass.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='steel'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/steel.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='water'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/water.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='fire'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/fire.svg');
+      }
+    }
+  }
+
+  &[type-pokemon-modal='flying'] {
+    .box {
+      &__left {
+        background-image: url('../../../public/svg/bg-types/flying.svg');
+      }
+    }
+  }
+}
+
+.open-modal {
+  .modal {
+    @include visibility(show);
+
+    .box {
+      transform: translateY(0);
+    }
+  }
+}

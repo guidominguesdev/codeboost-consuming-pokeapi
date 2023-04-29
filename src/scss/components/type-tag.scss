@@ -1,0 +1,103 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.type-tag {
+  font-family: $fonts-heading;
+  letter-spacing: $letter-spacings-md;
+  display: inline-block;
+  height: $space-6;
+  padding-inline: $space-6;
+  border-radius: $radii-sm;
+  font-size: to-rem(13px);
+  font-weight: $font-weights-semibold;
+
+  &.bug {
+    color: $colors-type-bug;
+    background-color: transparentize($colors-type-bug, 0.9);
+  }
+
+  &.dark {
+    color: $colors-type-dark;
+    background-color: transparentize($colors-type-dark, 0.9);
+  }
+
+  &.dragon {
+    color: $colors-type-dragon;
+    background-color: transparentize($colors-type-dragon, 0.9);
+  }
+
+  &.electric {
+    color: $colors-type-electric;
+    background-color: transparentize($colors-type-electric, 0.9);
+  }
+
+  &.fairy {
+    color: $colors-type-fairy;
+    background-color: transparentize($colors-type-fairy, 0.9);
+  }
+
+  &.fighting {
+    color: $colors-type-fighting;
+    background-color: transparentize($colors-type-fighting, 0.9);
+  }
+
+  &.ground {
+    color: $colors-type-ground;
+    background-color: transparentize($colors-type-ground, 0.9);
+  }
+
+  &.ice {
+    color: $colors-type-ice;
+    background-color: transparentize($colors-type-ice, 0.9);
+  }
+
+  &.normal {
+    color: $colors-type-normal;
+    background-color: transparentize($colors-type-normal, 0.9);
+  }
+
+  &.poison {
+    color: $colors-type-poison;
+    background-color: transparentize($colors-type-poison, 0.9);
+  }
+
+  &.psychic {
+    color: $colors-type-psychic;
+    background-color: transparentize($colors-type-psychic, 0.9);
+  }
+
+  &.rock {
+    color: $colors-type-rock;
+    background-color: transparentize($colors-type-rock, 0.9);
+  }
+
+  &.ghost {
+    color: $colors-type-ghost;
+    background-color: transparentize($colors-type-ghost, 0.9);
+  }
+
+  &.grass {
+    color: $colors-type-grass;
+    background-color: transparentize($colors-type-grass, 0.9);
+  }
+
+  &.steel {
+    color: $colors-type-steel;
+    background-color: transparentize($colors-type-steel, 0.9);
+  }
+
+  &.water {
+    color: $colors-type-water;
+    background-color: transparentize($colors-type-water, 0.9);
+  }
+
+  &.fire {
+    color: $colors-type-fire;
+    background-color: transparentize($colors-type-fire, 0.9);
+  }
+
+  &.flying {
+    color: $colors-type-flying;
+    background-color: transparentize($colors-type-flying, 0.9);
+  }
+}

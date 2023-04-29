@@ -1,0 +1,14 @@
+<svg
+  width="9"
+  height="16"
+  viewBox="0 0 9 16"
+  fill="currentColor"
+  stroke="currentColor"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path d="M4.5 14L2 11.5H4.5H7L4.5 14Z" />
+  <path
+    d="M4.5 0V14M4.5 14L2 11.5H7L4.5 14Z"
+    stroke-width="1.5"
+  />
+</svg>
